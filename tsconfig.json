@@ -18,7 +18,27 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/*": ["./src/*"],
+      "@module/*": [
+        "./src/modules/*"
+      ],
+      "@queues/*": [
+        "./src/queues/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@scheduler/*": [
+        "./src/schedulers/*"
+      ],
+      "@core/*": [
+        "./src/core/*"
+      ],
+      "@seeders/*": [
+        "./src/seeders/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ],
     }
   }
 }
