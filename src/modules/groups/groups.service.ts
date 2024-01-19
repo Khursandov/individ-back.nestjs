@@ -5,6 +5,7 @@ import { Group } from '@shared/models/group.module';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { BaseResponse } from '@core/responses/base.response';
+import { BasePaginatedResponse } from '@core/responses/base.paginated-response';
 
 @Injectable()
 export class GroupsService {
@@ -20,8 +21,20 @@ export class GroupsService {
     }
   }
 
-  findAll() {
-    return `This action returns all groups`;
+  async findAll() {
+    const queryBuilder = this.groupModel.find();
+    const total = this.groupModel.find();
+
+    queryBuilder.select(['name', 'description', 'createdAt', 'updatedAt']);
+
+    return BasePaginatedResponse.success({
+      success: true,
+      message: 'success',
+      data: {
+        items: await queryBuilder.exec(),
+        total: await total.countDocuments(),
+      },
+    });
   }
 
   findOne(id: number) {

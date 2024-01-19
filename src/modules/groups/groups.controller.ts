@@ -23,8 +23,7 @@ export class GroupsController {
 
   @Get()
   findAll() {
-    return 1111;
-    // return this.groupsService.findAll();
+    return this.groupsService.findAll();
   }
 
   @Get(':id')
