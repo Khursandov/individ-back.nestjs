@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
 import { Group } from '@shared/models/group.module';
 
-@Schema({ timestamps: true, collection: 'group' })
+@Schema({ timestamps: true, collection: 'student' })
 export class Student extends Document {
   @Prop({ required: true })
   firstName: string;
