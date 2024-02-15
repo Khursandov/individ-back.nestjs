@@ -6,6 +6,7 @@ import {
   Param,
   Patch,
   Post,
+  Req,
 } from '@nestjs/common';
 import { GroupsService } from './groups.service';
 import { CreateGroupDto } from './dto/create-group.dto';
@@ -22,7 +23,8 @@ export class GroupsController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Req() req: any) {
+    console.log(req.cookies);
     return this.groupsService.findAll();
   }
 
