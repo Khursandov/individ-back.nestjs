@@ -18,7 +18,9 @@ export class GroupsController {
   constructor(private readonly groupsService: GroupsService) {}
 
   @Post()
-  async create(@Body() createGroupDto: CreateGroupDto): Promise<IBaseResponse> {
+  async create(
+    @Body() createGroupDto: CreateGroupDto,
+  ): Promise<IBaseResponse<[]>> {
     return await this.groupsService.create(createGroupDto);
   }
 

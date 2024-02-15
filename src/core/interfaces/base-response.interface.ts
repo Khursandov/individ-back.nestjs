@@ -1,5 +1,5 @@
-export interface IBaseResponse {
+export interface IBaseResponse<T> {
   success: boolean;
   message: string;
-  data: any | any[];
+  data: T;
 }

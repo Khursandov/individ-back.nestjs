@@ -3,6 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { PaymentsModule } from '@module/payments/payments.module';
 import { GroupsModule } from '@module/groups/groups.module';
 import { StudentsModule } from '@module/students/students.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -10,6 +12,8 @@ import { StudentsModule } from '@module/students/students.module';
     GroupsModule,
     PaymentsModule,
     StudentsModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],
